@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.b757e1a0.css","mappings":"AAAA,KACE,kBAAgC,CAChC,8BAAkC,CAClC,cACF","sources":["styles/index.css"],"sourcesContent":["body {\r\n  background: lightgoldenrodyellow;\r\n  font-family: \"Verdana\", sans-serif;\r\n  font-size: 20px;\r\n}\r\n"],"names":[],"sourceRoot":""}
