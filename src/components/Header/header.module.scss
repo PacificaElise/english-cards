@@ -1,0 +1,18 @@
+@import '../../commonStyles/variables.scss';
+
+.header {
+   display: flex; 
+   flex-direction: row;
+   padding: 2rem 4rem;
+   height: 20px;
+   justify-content: flex-end;
+   gap: 20px;
+   background-color: $orange;
+   font-family: $title-font;
+   font-size: $title-size;
+   font-weight: 700;
+
+   a:hover {
+        transform: scale(1.1);
+   }
+}

@@ -1,0 +1,18 @@
+@import '../../commonStyles/variables.scss';
+
+.card {
+    width: 200px;
+    margin: 10px auto;
+    padding: 30px;
+    background-color: $yellow;
+    border: rgb(220, 139, 19) 2px solid;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    font-size: $title-size;
+
+    &:hover {
+        box-shadow: 0 5px 0 #ab9417;
+    }
+}

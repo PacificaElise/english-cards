@@ -1,0 +1,16 @@
+@import '../commonStyles/variables.scss';
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: rgb(247, 247, 234);
+  font-size: $text-size;
+  font-family: $text-font;
+  color: $text-color;
+}
+
+a {
+  text-decoration:none;
+  color:rgb(45, 45, 44)
+}

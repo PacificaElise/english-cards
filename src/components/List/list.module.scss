@@ -1,0 +1,54 @@
+@import '../../commonStyles/variables.scss';
+
+.input {
+    margin: 8px;
+    height: 30px;
+    max-width: 150px;
+
+    &:hover {
+        box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    }
+}
+
+.btn {
+    width: 120px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(50, 50, 50);
+    color: #fff;
+    text-align: center;
+
+    &:hover {
+        box-shadow: 10px 5px 5px rgb(78, 72, 72);
+    }
+
+    &:active { 
+        box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset;
+        transform: translatey(3px);
+      }
+}
+
+.btnRed {
+    background-color: $red;
+}
+
+.btnBlue {
+    background-color: $navy;
+}
+
+.btnGreen {
+    background-color: $green;
+}
+
+.btnOrange {
+    background-color: $orange;
+}
+
+.liSelected {
+    background-color: $yellow;
+}
+
+.btnNone {
+    display: none;
+}
