@@ -3,7 +3,7 @@
 .footer {
    display: flex; 
    flex-direction: row;
-   padding: 2rem 4rem;
+   padding: 1rem 6rem;
    height: 20px;
    justify-content: flex-start;
    gap: 20px;
@@ -11,6 +11,7 @@
    font-family: $title-font;
    font-size: $title-size;
    font-weight: 700;
+   position: relative;
 
    a:hover {
         transform: scale(1.1);
@@ -19,5 +20,8 @@
 
 .img{
     width: auto;
-    height: 32px;
+    height: 50px;
+    position: absolute;
+    top: 2%;
+    left: 1%;
 }

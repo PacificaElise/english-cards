@@ -1,18 +1,64 @@
 @import '../../commonStyles/variables.scss';
 
 .card {
-    width: 200px;
+    width: 150px;
+    height: 200px;
     margin: 10px auto;
-    padding: 30px;
-    background-color: $yellow;
-    border: rgb(220, 139, 19) 2px solid;
+    border: rgb(56, 40, 16) 2px solid;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
     font-weight: 600;
     font-size: $title-size;
+    position: relative;
+    perspective: 1500px;
 
-    &:hover {
-        box-shadow: 0 5px 0 #ab9417;
+    .front, .back {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items:center;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: 1s;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-wrap: break-word;
+}
+
+
+    .front {
+        background-color: $yellow;
     }
+
+    &:hover .front {
+        transform: rotateY(180deg);
+    }
+
+    .back {
+        background-color: $light-green;
+        transform: rotateY(180deg);
+    }
+
+    &:hover .back {
+        transform: rotateY(360deg);
+     }
+
+}
+
+.img {
+    height: 100px;
+    width: auto;
+}
+
+.bigText {
+    font-size: 30px;
+}
+
+.textMargin {
+    margin: 10px;
 }
