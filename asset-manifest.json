@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/english-cards/static/css/main.2641630e.css",
-    "main.js": "/english-cards/static/js/main.0ca7e17b.js",
+    "main.css": "/english-cards/static/css/main.fcd95195.css",
+    "main.js": "/english-cards/static/js/main.009028b9.js",
+    "static/media/grape.png": "/english-cards/static/media/grape.0020d74ae0acf36e6ab5.png",
+    "static/media/pineapple.png": "/english-cards/static/media/pineapple.f96a908fcc9c1f39fede.png",
+    "static/media/apple.png": "/english-cards/static/media/apple.5e8fea6921398896f4de.png",
     "index.html": "/english-cards/index.html",
-    "main.2641630e.css.map": "/english-cards/static/css/main.2641630e.css.map",
-    "main.0ca7e17b.js.map": "/english-cards/static/js/main.0ca7e17b.js.map"
+    "main.fcd95195.css.map": "/english-cards/static/css/main.fcd95195.css.map",
+    "main.009028b9.js.map": "/english-cards/static/js/main.009028b9.js.map"
   },
   "entrypoints": [
-    "static/css/main.2641630e.css",
-    "static/js/main.0ca7e17b.js"
+    "static/css/main.fcd95195.css",
+    "static/js/main.009028b9.js"
   ]
 }
