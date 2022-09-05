@@ -24,6 +24,7 @@ const List = props => {
                 <input className={styles.input}
                 type="text" 
                 placeholder='Введите слово'
+                defaultValue={english}
         />
         <input className={styles.input}
                 type="text" 

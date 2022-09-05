@@ -1,26 +1,20 @@
 @import '../../commonStyles/variables.scss';
 
-.card {
-    width: 150px;
-    height: 200px;
-    margin: 10px auto;
-    border: rgb(56, 40, 16) 2px solid;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
-    font-weight: 600;
-    font-size: $title-size;
+.card {   
+    width: 100%;
+    height: 100%;
     position: relative;
     perspective: 1500px;
+    margin-bottom: 2px;
 
     .front, .back {
     width: 100%;
     height: 100%;
     display: flex;
     align-items:center;
-    gap: 40px;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 30px;
     transition: 1s;
     backface-visibility: hidden;
     border-radius: 10px;
@@ -29,7 +23,6 @@
     left: 0;
     overflow-wrap: break-word;
 }
-
 
     .front {
         background-color: $yellow;
@@ -46,7 +39,7 @@
 
     &:hover .back {
         transform: rotateY(360deg);
-     }
+    }
 
 }
 
@@ -62,3 +55,4 @@
 .textMargin {
     margin: 10px;
 }
+
