@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/english-cards/static/css/main.f03095a7.css",
-    "main.js": "/english-cards/static/js/main.3373ae6c.js",
+    "main.css": "/english-cards/static/css/main.6e349fe6.css",
+    "main.js": "/english-cards/static/js/main.203709eb.js",
     "static/media/potato.png": "/english-cards/static/media/potato.0379ec595ddccd3b57c8.png",
     "static/media/cat.png": "/english-cards/static/media/cat.6d3134ec30e2aefe8361.png",
     "static/media/pumpkin.png": "/english-cards/static/media/pumpkin.2123bda3f2631a57d817.png",
@@ -13,11 +13,11 @@
     "static/media/pineapple.png": "/english-cards/static/media/pineapple.8fdd18db58bf4a0e0fa9.png",
     "static/media/arrow-left.png": "/english-cards/static/media/arrow-left.cfc5255e436c90073c91.png",
     "index.html": "/english-cards/index.html",
-    "main.f03095a7.css.map": "/english-cards/static/css/main.f03095a7.css.map",
-    "main.3373ae6c.js.map": "/english-cards/static/js/main.3373ae6c.js.map"
+    "main.6e349fe6.css.map": "/english-cards/static/css/main.6e349fe6.css.map",
+    "main.203709eb.js.map": "/english-cards/static/js/main.203709eb.js.map"
   },
   "entrypoints": [
-    "static/css/main.f03095a7.css",
-    "static/js/main.3373ae6c.js"
+    "static/css/main.6e349fe6.css",
+    "static/js/main.203709eb.js"
   ]
 }
