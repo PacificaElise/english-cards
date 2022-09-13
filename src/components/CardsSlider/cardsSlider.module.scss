@@ -1,5 +1,12 @@
 @import '../../commonStyles/variables.scss';
 
+.slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .sliderWrapper {
     display: flex;
     flex-direction: row;
@@ -23,6 +30,13 @@
     flex-direction: row; 
     flex-wrap: wrap;
     overflow: hidden;
+}
+
+.counter {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 }
 
 .btnSlide {

@@ -1,12 +1,18 @@
+import React from 'react';
+
+import { NavLink } from "react-router-dom";
 import styles from './header.module.scss';
 
-const Header = props => {
+const Header = () => {
     return (
-    <header className={styles.header}> 
-        <a href="/#">Добавить карточку</a>
-        <a href="/#">Теги</a>
-        <a href="/#">Тренировка</a>
-    </header>)
+        <header className={styles.header}> 
+            <NavLink to="/">Домашняя страница</NavLink>
+            <NavLink to="/list">Добавить карточку</NavLink>
+            <NavLink to="/cards">Проверь себя</NavLink>
+            <NavLink to="/tags">Теги</NavLink>
+            <NavLink to="/train">Тренировка</NavLink>
+        </header>
+    )
 }
 
 export default Header;

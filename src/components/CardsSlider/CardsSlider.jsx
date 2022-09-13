@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Card from '../Card/Card';
+import Card from './Card/Card';
 import styles from './cardsSlider.module.scss';
 import { cards } from '../../data';
 import BtnSlider from './BtnSlider';
@@ -47,13 +47,18 @@ const CardsSlider = () => {
     })
 
     return (
-        <div className={styles.sliderWrapper}>
-        <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
-              <div className={styles.sliderContainer}>
-                    {objectCard[slideIndex - 1]}
-               </div>         
-          <BtnSlider moveSlide={nextSlide} direction={"next"}/> 
-          </div>
+        <div className={styles.slider}>
+            <div className={styles.sliderWrapper}>
+                <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
+                <div className={styles.sliderContainer}>
+                        {objectCard[slideIndex - 1]}
+                </div>         
+                <BtnSlider moveSlide={nextSlide} direction={"next"}/>
+            </div>
+            <div className={styles.counter}>
+                <span>{slideIndex}</span><span>/</span><span>{cards.length}</span> 
+            </div>
+        </div>
         );
 };
 
