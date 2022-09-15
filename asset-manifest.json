@@ -1,23 +1,14 @@
 {
   "files": {
-    "main.css": "/english-cards/static/css/main.6e349fe6.css",
-    "main.js": "/english-cards/static/js/main.203709eb.js",
-    "static/media/potato.png": "/english-cards/static/media/potato.0379ec595ddccd3b57c8.png",
-    "static/media/cat.png": "/english-cards/static/media/cat.6d3134ec30e2aefe8361.png",
-    "static/media/pumpkin.png": "/english-cards/static/media/pumpkin.2123bda3f2631a57d817.png",
-    "static/media/cucumber.png": "/english-cards/static/media/cucumber.262ee8eae22b30ec7306.png",
-    "static/media/dog.png": "/english-cards/static/media/dog.bab7fe935d93097b8cf3.png",
-    "static/media/grape.png": "/english-cards/static/media/grape.c41d52462408557fec49.png",
-    "static/media/apple.png": "/english-cards/static/media/apple.2b2fd09f4d4fbb9e50e6.png",
-    "static/media/hedgehog.png": "/english-cards/static/media/hedgehog.1d3f3176e26bccb9c229.png",
-    "static/media/pineapple.png": "/english-cards/static/media/pineapple.8fdd18db58bf4a0e0fa9.png",
+    "main.css": "/english-cards/static/css/main.df72fe23.css",
+    "main.js": "/english-cards/static/js/main.9b993b6e.js",
     "static/media/arrow-left.png": "/english-cards/static/media/arrow-left.cfc5255e436c90073c91.png",
     "index.html": "/english-cards/index.html",
-    "main.6e349fe6.css.map": "/english-cards/static/css/main.6e349fe6.css.map",
-    "main.203709eb.js.map": "/english-cards/static/js/main.203709eb.js.map"
+    "main.df72fe23.css.map": "/english-cards/static/css/main.df72fe23.css.map",
+    "main.9b993b6e.js.map": "/english-cards/static/js/main.9b993b6e.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e349fe6.css",
-    "static/js/main.203709eb.js"
+    "static/css/main.df72fe23.css",
+    "static/js/main.9b993b6e.js"
   ]
 }
