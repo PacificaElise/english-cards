@@ -9,7 +9,7 @@ const Header = () => {
             <NavLink to="/">Домашняя страница</NavLink>
             <NavLink to="/list">Добавить карточку</NavLink>
             <NavLink to="/cards">Проверь себя</NavLink>
-            <NavLink to="/tags">Теги</NavLink>
+            <NavLink to="/tags">Поиск по тегам</NavLink>
             <NavLink to="/train">Тренировка</NavLink>
         </header>
     )
