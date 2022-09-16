@@ -5,13 +5,19 @@ import { categories } from '../../data';
 
 const Tags = () => {
     const [category, setCategory] = useState(0);
+    const [page, setPage] = useState(1);
     const [isLoading, setLoading] = useState(true);
     const [search, setSearch] = useState ('');
     const [tags, setTags] = useState ([]);
 
     useEffect(()=> {
         setLoading(true);
-        fetch(`https://63221d31fd698dfa29076399.mockapi.io/Tags?${category ? `category=${category}` : ''}`)
+
+        const categoryParam = category ? `category=${category}` : '';
+
+        fetch(
+            `https://63221d31fd698dfa29076399.mockapi.io/Tags?page=${page}&limit=6&${categoryParam}`,
+            )
             .then(res => res.json())
             .then((json) => {
                 setTags(json);
@@ -22,7 +28,7 @@ const Tags = () => {
             }).finally(() => {
                 setLoading(false);
             })
-    }, [category]);
+    }, [category, page]);
 
     return (
     <div className={styles.tagsWrapper}>
@@ -37,7 +43,8 @@ const Tags = () => {
                     </li>)
                 }
             </ul>
-            <input value={search} onChange={e => setSearch(e.target.value)} className={styles.search} placeholder='Поиск по тегу'></input>
+            <input value={search} onChange={e => setSearch(e.target.value)} className={styles.search} placeholder='Поиск по тегу'>
+            </input>
         </div>
         <div className={styles.content}>
             {isLoading ? 
@@ -60,9 +67,13 @@ const Tags = () => {
             }
         </div>
         <ul className={styles.pagination}>
-            <li className={styles.li}>1</li>
-            <li className={`${styles.li} ${styles.active}`}>2</li>
-            <li className={styles.li}>3</li>
+            {
+                [...Array(3)].map((_, index) => 
+                    <li key={index} onClick={() => setPage(index+1)}
+                    className={styles.li + ' ' + (page === index+1 && styles.active)}>
+                        {index+1}
+                    </li>)
+            }
         </ul>
     </div>
     )

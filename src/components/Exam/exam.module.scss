@@ -1,0 +1,60 @@
+@import '../../commonStyles/variables.scss';
+
+.examContainer {
+    width: 60%;
+    height: 50%;
+    background-color: $white;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px 3px rgba(0, 0, 0, 0.2);
+}
+
+.congrats {
+    width: 100px;
+    height: auto;
+}
+
+.progressBar {
+    width: 90%;
+    height: 10px;
+    border-radius: 20px;
+    background-color: $grey;
+}
+
+.progress {
+    background: linear-gradient(to right, $green, $light-green);
+    height: 100%;
+    border-radius: 20px;
+}
+
+.question {
+    margin-top: 20px;
+}
+
+.answersUl {
+    list-style: none;
+    width: 80%;
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.answer {
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 100%;
+    font-size: $title-size;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+
+    &:hover {
+        border: 2px solid black;
+    }
+}

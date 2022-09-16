@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Tags from './components/Tags/Tags';
 import CardsSlider from './components/CardsSlider/CardsSlider';
-import Training from './components/Training/Training';
+import Exam from './components/Exam/Exam';
 import List from './components/List/List';
 import Homepage from './components/Homepage/Homepage';
 
@@ -14,11 +14,11 @@ function App() {
   return (
     <Routes>
       <Route path='*' element={<Layout/>}>
-        <Route index element={<Homepage/>}/>
+        <Route path='english-cards' element={<Homepage/>}/>
         <Route path='list' element={<List/>}/>
         <Route path='cards' element={<CardsSlider/>}/>
         <Route path='tags' element={<Tags/>}/>
-        <Route path='train' element={<Training/>}/>
+        <Route path='exam' element={<Exam/>}/>
       </Route>
     </Routes>
   )
