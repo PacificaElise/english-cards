@@ -9,7 +9,6 @@ import Homepage from './components/Homepage/Homepage';
 
 import Layout from './components/Layout/Layout';
 
-
 function App() {
   return (
     <Routes>

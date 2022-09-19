@@ -1,3 +1,6 @@
+import React from 'react';
+import * as AiIcons from 'react-icons/ai';
+
 export const categories = [
     {"rustag": "Все"},
     {"rustag": "Фрукты"},
@@ -5,97 +8,32 @@ export const categories = [
     {"rustag": "Животные"},
     {"rustag": "Насекомые"},
     {"rustag": "Мебель"},
-  ]
+  ];
 
-  export let questions = [
+  export const sidebarData = [
     {
-      id: 1,
-      title: 'Переведи на английский слово "бабочка"',
-      variants: ['table', 'beetle', 'butterfly'],
-      correct: 2,
+      title: "Главная",
+      path: "/english-cards",
+      icon: <AiIcons.AiFillHome />
     },
     {
-      id: 2,
-      title: 'Переведи на английский слово "кот"',
-      variants: ['cat', 'desk', 'forest'],
-      correct: 0,
+      title: "Добавить карточку",
+      path: "/list",
+      icon: <AiIcons.AiFillDatabase/>
     },
     {
-      id: 3,
-      title: 'Переведи на английский слово "письменный стол"',
-      variants: ['garden', 'desk', 'apple'],
-      correct: 1,
+      title: "Тренировка",
+      path: "/cards",
+      icon: <AiIcons.AiFillCopy />
     },
     {
-      id: 4,
-      title: 'Переведи на английский слово "виноград"',
-      variants: ['shop', 'dog', 'grape'],
-      correct: 2,
+      title: "Поиск по тегам",
+      path: "/tags",
+      icon: <AiIcons.AiFillFilter />
     },
     {
-      id: 5,
-      title: 'Переведи на английский слово "стул"',
-      variants: ['cucumber', 'chair', 'bottle'],
-      correct: 1,
-    },
-    {
-      id: 6,
-      title: 'Переведи на английский слово "картофель"',
-      variants: ['potato', 'pillow', 'knife'],
-      correct: 0,
-    },
-    {
-      id: 7,
-      title: 'Переведи на английский слово "тыква"',
-      variants: ['pineapple', 'beach', 'pumpkin'],
-      correct: 2,
-    },
-    {
-      id: 8,
-      title: 'Переведи на английский слово "огурец"',
-      variants: ['hedgehog', 'cucumber', 'grape'],
-      correct: 1,
-    },
-    {
-      id: 9,
-      title: 'Переведи на английский слово "собака"',
-      variants: ['table', 'dog', 'trouble'],
-      correct: 1,
-    },
-    {
-      id: 10,
-      title: 'Переведи на английский слово "яблоко"',
-      variants: ['apple', 'boy', 'friend'],
-      correct: 0,
-    },
-    {
-      id: 11,
-      title: 'Переведи на английский слово "гусеница"',
-      variants: ['caterpillar', 'face', 'butterfly'],
-      correct: 0,
-    },
-    {
-      id: 12,
-      title: 'Переведи на английский слово "ёж"',
-      variants: ['name', 'child', 'hedgehog'],
-      correct: 2,
-    },
-    {
-      id: 13,
-      title: 'Переведи на английский слово "жук"',
-      variants: ['month', 'beetle', 'sun'],
-      correct: 1,
-    },
-    {
-      id: 14,
-      title: 'Переведи на английский слово "ананас"',
-      variants: ['hour', 'water', 'pineapple'],
-      correct: 2,
-    },
-    {
-      id: 15,
-      title: 'Переведи на английский слово "кровать"',
-      variants: ['bed', 'animal', 'tree'],
-      correct: 0,
+      title: "Проверь себя",
+      path: "/exam",
+      icon: <AiIcons.AiFillTrophy />
     }
   ]

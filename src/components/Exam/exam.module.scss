@@ -58,3 +58,20 @@
         border: 2px solid black;
     }
 }
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.againBtn {
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: $green;
+    font-size: $title-size;
+}

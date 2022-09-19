@@ -3,16 +3,19 @@
 body {
   height: 100vh;
   margin: 0;
-  padding: 0;
-  background: rgb(247, 247, 234);
+  padding: 0px 40px;
+  background: rgb(247, 247, 239);
   font-size: $text-size;
   font-family: $text-font;
   color: $text-color;
+  line-height: 1.5;
 }
 
 a {
   text-decoration:none;
-  color:rgb(45, 45, 44)
+  color:rgb(45, 45, 44);
+  font-family: $text-font;
+
 }
 
 h1, h2, h3, h4 {

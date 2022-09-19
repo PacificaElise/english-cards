@@ -5,10 +5,9 @@
     flex-direction: row;
     padding: 1rem 2rem;
     height: 20px;
-    justify-content: flex-end;
-    gap: 20px;
-    background-color: $orange;
-    font-family: $title-font;
+    justify-content: flex-start;
+    gap: 10px;
+    font-family: $text-font;
     font-size: $title-size;
     font-weight: 700;
 
@@ -17,6 +16,14 @@
     }
 }
 
-.active {
-    color: $green;
+.none {
+    display: none;
 }
+
+.close {
+    width: 30px;
+    height: 30px;
+    margin-right: 280px;
+}
+
+

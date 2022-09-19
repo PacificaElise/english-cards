@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Li from './Li/Li';
 import styles from './list.module.scss';
-
+import style from '../../commonStyles/loading.module.scss';
 
 const List = () => {
   const [list, setList] = useState ([]);
@@ -25,7 +25,13 @@ const List = () => {
     return (
       <div className={styles.list}>
         {isLoading ? 
-          <h3>Идёт загрузка...</h3> : 
+          <div className={style.loading}>
+            {
+            [...Array(4)].map((_, index) => 
+                <div key={index} className={style.loadingBar}>
+                </div>)
+            } 
+          </div> : 
           list.map((obg)=>
             <Li
               id={obg.id}

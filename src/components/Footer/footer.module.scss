@@ -7,8 +7,7 @@
    height: 20px;
    justify-content: flex-start;
    gap: 20px;
-   background-color: $green;
-   font-family: $title-font;
+   font-family: $text-font;
    font-size: $title-size;
    font-weight: 700;
    position: relative;
@@ -18,10 +17,11 @@
    }
 }
 
-.img{
+.img {
     width: auto;
     height: 50px;
     position: absolute;
     top: 2%;
     left: 1%;
+    border-radius: 10px;
 }

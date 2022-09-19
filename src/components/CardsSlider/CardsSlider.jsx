@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card/Card';
 import styles from './cardsSlider.module.scss';
+import style from '../../commonStyles/loading.module.scss';
 import BtnSlider from './BtnSlider';
 
 
@@ -66,19 +67,25 @@ const CardsSlider = () => {
     return (
         <div className={styles.slider}>
             {isLoading ? 
-            <h3>Идёт загрузка...</h3> : 
-            <>
-            <div className={styles.sliderWrapper}>
-                <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
-                <div className={styles.sliderContainer}>
-                        {objectCard[slideIndex - 1]}
-                </div>         
-                <BtnSlider moveSlide={nextSlide} direction={"next"}/>
-            </div>
-            <div className={styles.counter}>
-                <span>{slideIndex}</span><span>/</span><span>{cards.length}</span> 
-            </div>
-            </>
+                <div className={style.loading}>
+                    {
+                    [...Array(4)].map((_, index) => 
+                        <div key={index} className={style.loadingBar}>
+                        </div>)
+                    } 
+                </div> : 
+                <>
+                <div className={styles.sliderWrapper}>
+                    <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
+                    <div className={styles.sliderContainer}>
+                            {objectCard[slideIndex - 1]}
+                    </div>         
+                    <BtnSlider moveSlide={nextSlide} direction={"next"}/>
+                </div>
+                <div className={styles.counter}>
+                    <span>{slideIndex}</span><span>/</span><span>{cards.length}</span> 
+                </div>
+                </>
             }
         </div>
         );
