@@ -1,4 +1,3 @@
-import React from 'react';
 import * as AiIcons from 'react-icons/ai';
 
 export const categories = [
@@ -10,30 +9,35 @@ export const categories = [
     {"rustag": "Мебель"},
   ];
 
-  export const sidebarData = [
-    {
-      title: "Главная",
-      path: "/english-cards",
-      icon: <AiIcons.AiFillHome />
-    },
-    {
-      title: "Добавить карточку",
-      path: "/list",
-      icon: <AiIcons.AiFillDatabase/>
-    },
-    {
-      title: "Тренировка",
-      path: "/cards",
-      icon: <AiIcons.AiFillCopy />
-    },
-    {
-      title: "Поиск по тегам",
-      path: "/tags",
-      icon: <AiIcons.AiFillFilter />
-    },
-    {
-      title: "Проверь себя",
-      path: "/exam",
-      icon: <AiIcons.AiFillTrophy />
-    }
-  ]
+export const Items = [
+  {
+    id: 'a',
+    text: "Главная",
+    path: "/english-cards",
+    icon: <AiIcons.AiFillHome />
+  },
+  {
+    id: 'b',
+    text: "Добавить карточку",
+    path: "/list",
+    icon: <AiIcons.AiFillDatabase/>
+  },
+  {      
+    id: 'c',
+    text: "Тренировка",
+    path: "/cards",
+    icon: <AiIcons.AiFillCopy />
+  },
+  {
+    id: 'd',
+    text: "Поиск по тегам",
+    path: "/tags",
+    icon: <AiIcons.AiFillFilter />
+  },
+  {
+    id: 'e',
+    text: "Проверь себя",
+    path: "/exam",
+    icon: <AiIcons.AiFillTrophy />
+  }
+];

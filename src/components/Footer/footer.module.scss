@@ -1,27 +1,50 @@
 @import '../../commonStyles/variables.scss';
-
 .footer {
-   display: flex; 
-   flex-direction: row;
-   padding: 1rem 6rem;
-   height: 20px;
-   justify-content: flex-start;
-   gap: 20px;
-   font-family: $text-font;
-   font-size: $title-size;
-   font-weight: 700;
-   position: relative;
+    width:100%;
+    display: flex;
+    margin-top: 20px;
+    padding: 10px 10px; 
+    flex-direction: row;
+    height: 10%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-family: $text-font;
+    font-size: $title-size;
+    font-weight: 700;
 
-   a:hover {
-        transform: scale(1.1);
-   }
+    a:hover {
+        text-decoration: underline;
+        color: $green;
+    }
+
+    p {
+        margin: 0 0 0 30px;
+        padding: 0 0 0 20px;
+    }
 }
+
+.footerContainer {
+    position: relative;
+}
+
 
 .img {
     width: auto;
-    height: 50px;
+    height: 100%;
     position: absolute;
-    top: 2%;
-    left: 1%;
+    top: 0;
+    left: 0;
     border-radius: 10px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.pngtree {
+    opacity: 0.5;
+    font-size: 12px;
 }

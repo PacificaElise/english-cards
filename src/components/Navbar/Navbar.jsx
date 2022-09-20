@@ -1,43 +1,25 @@
 import React, {useState} from 'react';
+import { motion } from "framer-motion";
 import styles from './navbar.module.scss';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import { NavLink } from "react-router-dom";
-import { sidebarData } from '../../data';
+import { Items } from '../../data';
+import MenuItem from "./MenuItem/MenuItem";
 
-const Navbar = () => {
-const [isOpen, setOpen] = useState(false);
+const variants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 }
+  }
+};
 
-return (
-  <>
-    <div className={styles.navBar} onClick={()=>
-      setOpen(isOpen=>!isOpen)
-      }>
-      <FaIcons.FaBars/>
-    </div>
-    <nav className={isOpen ? styles.navMenu : styles.notActive}>
-      <ul className={styles.navMenuItems}>
-        <li>
-          <AiIcons.AiOutlineClose className={styles.navMenuClose} onClick={()=>
-            setOpen(isOpen=>!isOpen)
-          }/>
-        </li>
-        {
-          sidebarData.map((item, index) => {
-            return ( 
-              <li className={styles.navMenuItem} key={index}>
-                <NavLink onClick={() => setOpen(isOpen=>!isOpen)} to={item.path}>
-                  {item.icon}
-                  <span>{item.title}</span>
-                </NavLink>
-              </li>
-              )
-          })
-        }
-      </ul>
-    </nav>
-  </>
-)
-}
+
+const Navbar = () => (
+  <motion.ul variants={variants} className={styles.navbarUl}>
+    {Items.map((item) => (
+      <MenuItem className={styles.menuItem} key={item.id} text={item.text} icon={item.icon} path={item.path}/>
+    ))}
+  </motion.ul>
+);
 
 export default Navbar

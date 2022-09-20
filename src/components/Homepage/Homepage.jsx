@@ -5,7 +5,7 @@ import styles from './homepage.module.scss'
 const Homepage = () => {
   return (
     <>
-      <div className={styles.wrapper}>
+      <div className={styles.HomepageWrapper}>
         <div className={styles.text}>
           <h1 className={styles.title}>
             Small steps, Big results
@@ -16,7 +16,7 @@ const Homepage = () => {
             Don’t stop dreaming, never stop believing.
           </p>
         </div>
-      <div className={styles.container}>
+      <div className={styles.HomepageContainer}>
         <div className={styles.background}>
         </div>
         <img src={learnEnglish} alt='девушка с книгой' className={styles.img}></img>

@@ -3,27 +3,40 @@
 .header {
     display: flex; 
     flex-direction: row;
-    padding: 1rem 2rem;
-    height: 20px;
-    justify-content: flex-start;
+    margin-bottom: 20px;
+    padding: 10px 10px; 
+    justify-content: flex-end;
     gap: 10px;
     font-family: $text-font;
     font-size: $title-size;
     font-weight: 700;
-
+    
     a:hover {
-        transform: scale(1.1);
+        text-decoration: underline;
+        color: $green;
     }
 }
 
-.none {
-    display: none;
+.navbar {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: $light-green;
 }
 
-.close {
-    width: 30px;
-    height: 30px;
-    margin-right: 280px;
+.nav {
+    width: 280px;
+    height: 100vh;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    bottom: 0;
 }
+
+
 
 

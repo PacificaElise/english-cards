@@ -1,42 +1,22 @@
 @import '../../commonStyles/variables.scss';
 
-.navBar {
-    font-size: 1.5rem;
-    background: none;
-}
-
-.navMenu {
-    background-color: $light-green;
-    width: 280px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-}
-
-.navMenuItems {
+.menuItem {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 20px;
     list-style: none;
 }
 
-.notActive {
-    display: none;
-}
-
-.navMenuClose {
-    margin-left: -20px;
-    font-size: 1.5rem;
-    background: none;
-}
-
-a:active {
-    color: $green;
-    text-decoration:underline;
+.navbarUl {
+  padding: 25px;
+  position: absolute;
+  z-index: 4;
+  top: 100px;
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  list-style: none;
 }

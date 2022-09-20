@@ -1,7 +1,10 @@
+@import '../../commonStyles/variables.scss';
+
 .wrapper {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    padding: 0px 40px;
 }
 
 .main {
@@ -10,5 +13,7 @@
     justify-content: center;
     align-items: center;
 }
+
+    
 
 
