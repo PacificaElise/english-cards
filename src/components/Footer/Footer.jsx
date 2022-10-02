@@ -12,7 +12,7 @@ const Footer = () => {
           <a href="/#">tati.ivanova.87@gmail.com</a> 
         </div>
       </div>
-      <a className={styles.pngtree} href="https://pngtree.com/">Изображения зяты с https://pngtree.com/</a> 
+      <a className={styles.pngtree} href="https://pngtree.com/">Изображения взяты с https://pngtree.com/</a> 
     </div>)
 }
 

@@ -45,7 +45,7 @@ const Header = () => {
       { 
         Items.map((item, index) => {
             return (
-              <NavLink to={item.path} key={index} end>
+              <NavLink to={item.path} key={index} style={({isActive}) => ({color: isActive && '#58A9A5'})}>
                 <span>
                   {item.text}
                 </span>
