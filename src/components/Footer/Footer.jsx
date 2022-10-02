@@ -5,14 +5,14 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <div className={styles.footerContainer}>
-          <img src="https://img1.labirint.ru/rcimg/7b61a467af52d711146209c64e85ecb6/1920x1080/books57/562233/ph_1.jpg?1563956854" alt='logo' className={styles.img}>
+          <img src="https://img1.labirint.ru/rcimg/7b61a467af52d711146209c64e85ecb6/1920x1080/books57/562233/ph_1.jpg?1563956854" alt='logo' className={styles.logo}>
           </img>
         <div className={styles.contacts}>
           <p>Контакты</p>
           <a href="/#">tati.ivanova.87@gmail.com</a> 
         </div>
       </div>
-      <a className={styles.pngtree} href="https://pngtree.com/">Изображения с https://pngtree.com/</a> 
+      <a className={styles.pngtree} href="https://pngtree.com/">Изображения зяты с https://pngtree.com/</a> 
     </div>)
 }
 

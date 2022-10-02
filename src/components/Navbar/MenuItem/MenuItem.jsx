@@ -28,7 +28,7 @@ const variants = {
       variants={variants}
       whileTap={{ scale: 0.95 }}
     >
-    <NavLink to={path} className={styles.menuItem}>
+    <NavLink to={path} className={styles.menuItem} end>
       <div>{icon}</div>
       <div>{text}</div>
     </NavLink>

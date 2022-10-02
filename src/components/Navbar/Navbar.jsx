@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { motion } from "framer-motion";
 import styles from './navbar.module.scss';
 import { Items } from '../../data';
@@ -18,7 +18,7 @@ const Navbar = () => (
   <motion.ul variants={variants} className={styles.navbarUl}>
     {Items.map((item) => (
       <MenuItem className={styles.menuItem} key={item.id} text={item.text} icon={item.icon} path={item.path}/>
-    ))}
+    )).slice(1)}
   </motion.ul>
 );
 

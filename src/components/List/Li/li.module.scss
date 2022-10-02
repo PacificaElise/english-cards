@@ -5,8 +5,8 @@
     height: 30px;
     max-width: 150px;
 
-    &:hover {
-        box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    &:focus {
+        box-shadow: inset 2px 2px 4px rgba(154, 147, 140, 0.5), 1px 1px 3px rgba(255, 255, 255, 1);
     }
 }
 

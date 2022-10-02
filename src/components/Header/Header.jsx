@@ -45,7 +45,7 @@ const Header = () => {
       { 
         Items.map((item, index) => {
             return (
-              <NavLink to={item.path} key={index}>
+              <NavLink to={item.path} key={index} end>
                 <span>
                   {item.text}
                 </span>

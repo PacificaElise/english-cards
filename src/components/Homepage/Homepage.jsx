@@ -5,8 +5,8 @@ import styles from './homepage.module.scss'
 const Homepage = () => {
   return (
     <>
-      <div className={styles.HomepageWrapper}>
-        <div className={styles.text}>
+      <section className={styles.HomepageWrapper}>
+        <article className={styles.text}>
           <h1 className={styles.title}>
             Small steps, Big results
           </h1>
@@ -15,13 +15,13 @@ const Homepage = () => {
             Foreign languages open the gates to the culture of different countries and are the most important means of communication between people. <br />
             Don’t stop dreaming, never stop believing.
           </p>
+        </article>
+        <div className={styles.HomepageContainer}>
+          <div className={styles.background}>
+          </div>
+          <img src={learnEnglish} alt='девушка с книгой' className={styles.img}></img>
         </div>
-      <div className={styles.HomepageContainer}>
-        <div className={styles.background}>
-        </div>
-        <img src={learnEnglish} alt='девушка с книгой' className={styles.img}></img>
-      </div>
-      </div>
+      </section>
     </>
   )
 }
