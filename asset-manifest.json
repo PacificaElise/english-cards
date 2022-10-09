@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/english-cards/static/css/main.63c9def6.css",
-    "main.js": "/english-cards/static/js/main.79c4e766.js",
+    "main.css": "/english-cards/static/css/main.3bd6d40f.css",
+    "main.js": "/english-cards/static/js/main.5c0a91f9.js",
     "static/media/learnEnglish.png": "/english-cards/static/media/learnEnglish.186a387d65201894eea3.png",
     "static/media/arrow-left.png": "/english-cards/static/media/arrow-left.cfc5255e436c90073c91.png",
     "index.html": "/english-cards/index.html",
-    "main.63c9def6.css.map": "/english-cards/static/css/main.63c9def6.css.map",
-    "main.79c4e766.js.map": "/english-cards/static/js/main.79c4e766.js.map"
+    "main.3bd6d40f.css.map": "/english-cards/static/css/main.3bd6d40f.css.map",
+    "main.5c0a91f9.js.map": "/english-cards/static/js/main.5c0a91f9.js.map"
   },
   "entrypoints": [
-    "static/css/main.63c9def6.css",
-    "static/js/main.79c4e766.js"
+    "static/css/main.3bd6d40f.css",
+    "static/js/main.5c0a91f9.js"
   ]
 }
