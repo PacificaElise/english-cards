@@ -14,7 +14,7 @@ export const Items = [
     id: 'a',
     text: <img src="https://img1.labirint.ru/rcimg/7b61a467af52d711146209c64e85ecb6/1920x1080/books57/562233/ph_1.jpg?1563956854" alt='logo' 
     style={{ height: '30px', borderRadius: '10px'}}></img>,
-    path: "/english-cards",
+    path: "/logo",
     icon: <AiIcons.AiFillHome />
   },
   {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Tags from './components/Tags/Tags';
 import CardsSlider from './components/CardsSlider/CardsSlider';
@@ -16,6 +16,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Layout/>}>
         <Route path='english-cards' element={<Homepage/>}/>
+        <Route path='logo' element={<Navigate to="/english-cards" replace/>}/>
         <Route path='list' element={<List/>}/>
         <Route path='cards' element={<CardsSlider/>}/>
         <Route path='tags' element={<Tags/>}/>
