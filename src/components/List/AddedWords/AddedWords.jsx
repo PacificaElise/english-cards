@@ -25,15 +25,15 @@ const AddedWords = props => {
 
   const deleteWord = (id) => {
     let isDelete = window.confirm("Вы действительно хотите удалить это слово?");
-    if (isDelete == true) {
-      let newList = [...list].filter(item => item.id!=id);
+    if (isDelete) {
+      let newList = [...list].filter(item => item.id!==id);
       setList(newList)
     }
   }
 
   const saveWord = (id) => {
     let newList = [...list].map (item => {
-      if(item.id == id) {
+      if(item.id === id) {
             item.english = data.english;
             item.transcription = data.transcription;
             item.russian = data.russian;
@@ -66,7 +66,7 @@ const AddedWords = props => {
       list.map (item => (
         <li key={item.id} className={styles.li} english={item.english}>
           {
-            edit == item.id ? 
+            edit === item.id ? 
             <>
                 <input value={data.english} onChange={onChange} name='english'/>
                 <input value={data.transcription} onChange={onChange} name='transcription'/>
