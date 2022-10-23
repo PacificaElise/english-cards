@@ -34,7 +34,7 @@ function AddList() {
           tags: tag
         })
       });
-      if (res.status === 200) {
+      if (res.ok) {
         const newlist = await res.json();
         setList(newlist);
       }

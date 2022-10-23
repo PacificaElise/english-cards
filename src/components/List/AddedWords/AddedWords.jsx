@@ -36,7 +36,7 @@ const AddedWords = () => {
           'Content-Type': 'application/json'
         },
       });
-      if(res.status === 200) {
+      if(res.ok) {
         let newList = [...list].filter(item => item.id!==id);
         setList(newList)
       };
@@ -65,7 +65,7 @@ const AddedWords = () => {
           tags: tag
         })
       });
-      if(res.status === 200) {
+      if(res.ok) {
         let newList = [...list].map (item => {
           if (item.id === id) {
             item.english = data.english;
