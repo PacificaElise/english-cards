@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import Tags from './components/Tags/Tags';
@@ -12,12 +12,13 @@ import NotFound from './components/NotFound/NotFound';
 
 
 function App() {
+
   return (
     <Routes>
       <Route path='/' element={<Layout/>}>
         <Route path='english-cards' element={<Homepage/>}/>
         <Route path='logo' element={<Navigate to="/english-cards" replace/>}/>
-        <Route path='list' element={<List/>}/>
+        <Route path='list' element={<List />}/>
         <Route path='cards' element={<CardsSlider/>}/>
         <Route path='tags' element={<Tags/>}/>
         <Route path='exam' element={<Exam/>}/>

@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import Li from './Li/Li';
+import AddedWords from './AddedWords/AddedWords';
+import AddList from './AddedWords/AddList';
 import styles from './list.module.scss';
-import style from '../../commonStyles/loading.module.scss';
+//import style from '../../commonStyles/loading.module.scss';
 
 const List = () => {
-  const [list, setList] = useState ([]);
-  const [isLoading, setLoading] = useState(true);
+  const [list, setList] = useState(
+    JSON.parse(localStorage.getItem('list')) || []
+  );
 
   useEffect(()=> {
+    localStorage.setItem('list', JSON.stringify(list))
+  }, [list])
+
+  //const [isLoading, setLoading] = useState(true);
+
+  /*useEffect(()=> {
     setLoading(true);
     fetch('https://63221d31fd698dfa29076399.mockapi.io/Tags')
         .then(res => res.json())
@@ -20,30 +28,13 @@ const List = () => {
         }).finally(() => {
           setLoading(false);
         })
-  }, []);
+  }, []);*/
 
     return (
-      <div className={styles.list}>
-        {isLoading ? 
-          <div className={style.loading}>
-            {
-            [...Array(4)].map((_, index) => 
-                <div key={index} className={style.loadingBar}>
-                </div>)
-            } 
-          </div> : 
-          list.map((obg)=>
-            <Li
-              id={obg.id}
-              key={obg.id}
-              english={obg.english}
-              russian={obg.russian}
-              transcription={obg.transcription}
-              tag={obg.tag}
-              />
-            )   
-        }
-      </div>
+      <section className={styles.list}>
+        <AddList list={list} setList={setList}/>
+        <AddedWords list={list} setList={setList}/>
+      </section>
     )
 };
 
