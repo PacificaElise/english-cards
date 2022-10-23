@@ -1,12 +1,13 @@
 import * as AiIcons from 'react-icons/ai';
 
 export const categories = [
-    {"rustag": "Все"},
-    {"rustag": "Фрукты"},
-    {"rustag": "Овощи"},
-    {"rustag": "Животные"},
-    {"rustag": "Насекомые"},
-    {"rustag": "Мебель"},
+    {"tags": "Все"},
+    {"tags": "анатомия"},
+    {"tags": "IT"},
+    {"tags": "птицы"},
+    {"tags": "numbers"},
+    {"tags": "countries"},
+    {"tags": "животные"},
   ];
 
 export const Items = [

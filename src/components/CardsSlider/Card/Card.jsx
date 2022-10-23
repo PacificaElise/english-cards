@@ -3,7 +3,7 @@ import styles from './card.module.scss';
 
 
 const Card = React.forwardRef((props, ref) => {
-  const {id, img, english, russian, transcription, tag, isFlipped, flipCard}=props;
+  const {id, img, english, russian, transcription, tags, isFlipped, flipCard}=props;
   
   useEffect(() => {
     ref.current.focus();
@@ -14,7 +14,7 @@ const Card = React.forwardRef((props, ref) => {
         <div className={isFlipped ? `${styles.front} ${styles.flipped180}` : styles.front}>
           <span className={styles.bigText}><strong>{english}</strong></span>
           <span>{transcription}</span>
-          <span><i>{tag}</i></span>
+          <span><i>{tags}</i></span>
           <input type="button" ref={ref} className={styles.btn} onClick={flipCard(id)} value="Посмотреть перевод" 
           />          
         </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './tag.module.scss';
 
 const Tag = props => {
-  const {img, english, russian, tag, rustag}=props;
+  const {img, english, russian, tag, tags}=props;
   return (
     <div className={styles.tag}>
       <div className={styles.imgContainer}>
@@ -13,7 +13,7 @@ const Tag = props => {
         <span>({russian})</span>
       </div>
       <h3>{tag}</h3>
-      <h4>({rustag})</h4>
+      <h4>({tags})</h4>
     </div>
   )
 }

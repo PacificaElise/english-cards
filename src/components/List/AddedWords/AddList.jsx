@@ -1,33 +1,52 @@
-import React from 'react';
+import React, {useContext, useState, useRef, useEffect} from 'react';
 import {useInput} from '../../customHooks/Validation'
 import { v4 as uuidv4 } from 'uuid';
 import { Button,InputGroup, Form } from 'react-bootstrap';
 import { BsPlusCircleDotted } from "react-icons/bs";
 import styles from './addList.module.scss';
+import { CollectionWordsContext } from '../../../CollectionWordsContext';
 
-function AddList(props) {
-  const {list, setList}=props;
+function AddList() {
+  const {setList} = useContext(CollectionWordsContext);
 
   const english = useInput('', {isEmpty: true, isNumber: false, isRU: false});
   const transcription = useInput('', {isEmpty: true, isNumber: false, isRU: false});
   const russian = useInput('', {isEmpty: true, isNumber: false});
-  const rustag = useInput('', {isEmpty: true});
+  const tags = useInput('', {isEmpty: true});  
 
-  const addWord = () => {
-    setList(
-      [...list, {
-        id: uuidv4(),
-        english: english.value,
-        transcription: transcription.value,
-        russian: russian.value,
-        rustag: rustag.value,
-      }]
-    );
-    english.setValue('');
-    transcription.setValue('');    
-    russian.setValue('');
-    rustag.setValue(''); 
-}
+  const addWord = async () => {
+    const id = uuidv4();
+    const eng = english.value;
+    const trans = transcription.value;
+    const rus = russian.value;
+    const tag = tags.value;
+    try {
+      const res = await fetch(`http://itgirlschool.justmakeit.ru/api/words/add`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id: id,
+          english: eng,
+          transcription: trans,
+          russian: rus,
+          tags: tag
+        })
+      });
+      if (res.status === 200) {
+        const newlist = await res.json();
+        setList(newlist);
+      }
+    } catch(e) {
+      alert(`Ошибка соединения с сервером. ${e}`);
+    } finally {
+      english.setValue('');
+      transcription.setValue('');    
+      russian.setValue('');
+      tags.setValue(''); 
+    } 
+  }
 
   return (
     <>
@@ -66,16 +85,16 @@ function AddList(props) {
               />
           </label>
           <label>
-          <input style={{'borderColor': (rustag.isDirty && rustag.isEmpty) && 'red'}}
+          <input style={{'borderColor': (tags.isDirty && tags.isEmpty) && 'red'}}
               placeholder="Введите категорию"
-              value={rustag.value}
-              onChange={(e) => rustag.onChange(e)}
-              onBlur={(e) => rustag.onBlur(e)}
+              value={tags.value}
+              onChange={(e) => tags.onChange(e)}
+              onBlur={(e) => tags.onBlur(e)}
               name='ru'
               />
           </label>
           </InputGroup>
-          <Button variant="warning" onClick={() => addWord()} disabled = {!english.inputValid || !transcription.inputValid || !russian.inputValid || !rustag.inputValid}><BsPlusCircleDotted/></Button>
+          <Button variant="warning" onClick={() => addWord()} disabled = {!english.inputValid || !transcription.inputValid || !russian.inputValid || !tags.inputValid}><BsPlusCircleDotted/></Button>
       </Form>
     </>
   )

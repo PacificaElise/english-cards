@@ -17,7 +17,7 @@ const Tags = () => {
     const categoryParam = category ? `category=${category}` : '';
 
     fetch(
-      `https://63221d31fd698dfa29076399.mockapi.io/Tags?page=${page}&limit=6&${categoryParam}`,
+      `https://6354525de64783fa82833364.mockapi.io/Words?page=${page}&limit=9&${categoryParam}`,
       )
       .then(res => res.json())
       .then((json) => {
@@ -47,9 +47,9 @@ const Tags = () => {
             <ul className={styles.tags}>
               {
                 categories.map((obj, index) => 
-                <li key={obj.rustag} onClick={() => setCategory(index)} 
+                <li key={obj.tags} onClick={() => setCategory(index)} 
                 className={styles.li + ' ' + (category === index && styles.active)}>
-                  {obj.rustag}
+                  {obj.tags}
                 </li>)
               }
               </ul>
@@ -60,7 +60,7 @@ const Tags = () => {
             {
               tags
               .filter(obj => {
-                return obj.rustag.toLowerCase().includes(search.toLowerCase());
+                return obj.tags.toLowerCase().includes(search.toLowerCase());
                 })
               .map((obj)=>
                 <Tag
@@ -69,8 +69,7 @@ const Tags = () => {
                 english={obj.english}
                 russian={obj.russian}
                 img={obj.img}
-                tag={obj.tag}
-                rustag={obj.rustag}
+                tags={obj.tags}
                 />
               )
             }

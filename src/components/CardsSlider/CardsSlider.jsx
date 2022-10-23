@@ -1,49 +1,33 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import Card from './Card/Card';
 import styles from './cardsSlider.module.scss';
 import style from '../../commonStyles/loading.module.scss';
 import BtnSlider from './BtnSlider';
+import { CollectionWordsContext} from '../../CollectionWordsContext';
 
 const CardsSlider = () => {
-  const [isLoading, setLoading] = useState(true);
-  const [cards, setCards] = useState([]);
   const [slideIndex, setSlideIndex] = useState(1);
   const [openCards, setOpenCards] = useState([]);
   const [moves, setMoves] = useState(0);
   const buttonRef = useRef();
+  const {isLoading, list} = useContext(CollectionWordsContext);
 
   const flipCard = (id) => () => {
     setOpenCards(openCards => [...openCards, id]);
     setMoves(prevMove => prevMove + 1)
   }
-console.log(openCards)
 
-const handleRestart = () => {
-  setOpenCards([]);
-  setMoves(0);
-  setSlideIndex(1);
-}
-
-  useEffect(()=> {
-    setLoading(true);
-    fetch('https://63221d31fd698dfa29076399.mockapi.io/Tags')
-      .then(res => res.json())
-      .then((json) => {
-          setCards(json);
-      })
-      .catch((err) => {
-          console.warn(err);
-          alert('Ошибка при получении данных');
-      }).finally(() => {
-          setLoading(false);
-      })
-  }, []);
+  const handleRestart = () => {
+    setOpenCards([]);
+    setMoves(0);
+    setSlideIndex(1);
+  }
 
   const nextSlide = () => {
-    if(slideIndex !== cards.length) {
+    if(slideIndex !== list.length) {
         setSlideIndex(slideIndex+1)
     }
-    else if (slideIndex === cards.length) {
+    else if (slideIndex === list.length) {
         setSlideIndex(1)
     }
   };
@@ -53,16 +37,16 @@ const handleRestart = () => {
         setSlideIndex(slideIndex-1)
     }
     else if (slideIndex === 1) {
-        setSlideIndex(cards.length)
+        setSlideIndex(list.length)
     }
   };
   
-  const objectCard = cards.map((obj) => {
+  const objectCard = list.map((obj) => {
     Card.defaultProps = {
       english: 'english', 
       russian: 'russian', 
       transcription:'transcription', 
-      tag:'tag'
+      tags:'tags'
     }
   
   let isFlipped = false;
@@ -78,7 +62,7 @@ const handleRestart = () => {
       russian={obj.russian}
       transcription={obj.transcription}
       img={obj.img}
-      tag={obj.tag}
+      tags={obj.tags}
       isFlipped={isFlipped}
       flipCard={flipCard}
     />
@@ -105,7 +89,7 @@ const handleRestart = () => {
           <BtnSlider moveSlide={nextSlide} direction={"next"}/>
         </div>
         <div className={styles.counter}>
-          <span>{slideIndex}</span><span>/</span><span>{cards.length}</span> 
+          <span>{slideIndex}</span><span>/</span><span>{list.length}</span> 
         </div>
         <button className={styles.btnRestart} onClick={handleRestart}><strong>Начать заново</strong></button>
         </>
