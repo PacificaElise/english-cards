@@ -14,25 +14,24 @@ function AddList() {
   const tags = useInput('', {isEmpty: true});  
 
   const addWord = async () => {
-    const id = english.id;
-    const eng = english.value;
-    const trans = transcription.value;
-    const rus = russian.value;
-    const tag = tags.value;
+    const newWord = {
+      english: english.value,
+      transcription: transcription.value,
+      russian: russian.value,
+      tags: tags.value
+    }
     try {
       const res = await fetch(`http://itgirlschool.justmakeit.ru/api/words/add`, {
         method: 'POST',
         body: JSON.stringify({
-          id: id,
-          english: eng,
-          transcription: trans,
-          russian: rus,
-          tags: tag
+          english: english,
+          transcription: transcription,
+          russian: russian,
+          tags: tags
         })
       });
       if (res.ok) {
-        const newItem = await res.json();
-        list.push(newItem);
+        list.push(newWord);
         setList([...list]);
       }
     } catch(e) {
