@@ -32,9 +32,6 @@ const AddedWords = () => {
     try {
       const res = await fetch(`http://itgirlschool.justmakeit.ru/api/words/${id}/delete`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
       });
       if(res.ok) {
         let newList = [...list].filter(item => item.id!==id);
@@ -54,9 +51,6 @@ const AddedWords = () => {
     try {
       const res = await fetch(`http://itgirlschool.justmakeit.ru/api/words/${id}/update`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
         body: JSON.stringify({
           id: id,
           english: eng,
