@@ -23,12 +23,7 @@ function AddList() {
     try {
       const res = await fetch(`http://itgirlschool.justmakeit.ru/api/words/add`, {
         method: 'POST',
-        body: JSON.stringify({
-          english: english,
-          transcription: transcription,
-          russian: russian,
-          tags: tags
-        })
+        body: JSON.stringify(newWord)
       });
       if (res.ok) {
         list.push(newWord);

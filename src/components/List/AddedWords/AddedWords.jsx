@@ -44,20 +44,16 @@ const AddedWords = () => {
   }
 
   const saveWord = async (id) => {
-    const eng = data.english;
-    const trans = data.transcription;
-    const rus = data.russian;
-    const tag = data.tags;
+    const newWord = {
+      english: data.english,
+      transcription: data.transcription,
+      russian: data.russian,
+      tags: data.tags
+    }
     try {
       const res = await fetch(`http://itgirlschool.justmakeit.ru/api/words/${id}/update`, {
         method: 'POST',
-        body: JSON.stringify({
-          id: id,
-          english: eng,
-          transcription: trans,
-          russian: rus,
-          tags: tag
-        })
+        body: JSON.stringify(newWord)
       });
       if(res.ok) {
         let newList = [...list].map (item => {
