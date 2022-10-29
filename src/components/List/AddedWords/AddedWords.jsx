@@ -128,6 +128,7 @@ const AddedWords = () => {
       }  
     </ol>
   )
+  
 }
 
 export default AddedWords;

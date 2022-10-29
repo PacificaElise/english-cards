@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import AddedWords from './AddedWords/AddedWords';
 import AddList from './AddedWords/AddList';
 import styles from './list.module.scss';
@@ -8,7 +8,12 @@ import { CollectionWordsContext } from '../../CollectionWordsContext';
 
 
 const List = () => {
-  const {isLoading} = useContext(CollectionWordsContext);
+  const {isLoading, list} = useContext(CollectionWordsContext);
+
+  useEffect(() => {
+    <AddedWords />
+    }, [list]);
+
   
   return (
     <>

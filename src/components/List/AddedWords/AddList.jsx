@@ -1,13 +1,12 @@
 import React, {useContext} from 'react';
 import {useInput} from '../../customHooks/Validation'
-import { v4 as uuidv4 } from 'uuid';
 import { Button,InputGroup, Form } from 'react-bootstrap';
 import { BsPlusCircleDotted } from "react-icons/bs";
 import styles from './addList.module.scss';
 import { CollectionWordsContext } from '../../../CollectionWordsContext';
 
 function AddList() {
-  const {setList} = useContext(CollectionWordsContext);
+  const {setList, list} = useContext(CollectionWordsContext);
 
   const english = useInput('', {isEmpty: true, isNumber: false, isRU: false});
   const transcription = useInput('', {isEmpty: true, isNumber: false, isRU: false});
@@ -15,7 +14,7 @@ function AddList() {
   const tags = useInput('', {isEmpty: true});  
 
   const addWord = async () => {
-    const id = uuidv4();
+    const id = english.id;
     const eng = english.value;
     const trans = transcription.value;
     const rus = russian.value;
@@ -23,9 +22,6 @@ function AddList() {
     try {
       const res = await fetch(`http://itgirlschool.justmakeit.ru/api/words/add`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
         body: JSON.stringify({
           id: id,
           english: eng,
@@ -35,8 +31,9 @@ function AddList() {
         })
       });
       if (res.ok) {
-        const newlist = await res.json();
-        setList(newlist);
+        const newItem = await res.json();
+        list.push(newItem);
+        setList([...list]);
       }
     } catch(e) {
       alert(`Ошибка соединения с сервером. ${e}`);
