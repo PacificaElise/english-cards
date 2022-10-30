@@ -1,12 +1,11 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {useInput} from '../../customHooks/Validation'
 import { Button,InputGroup, Form } from 'react-bootstrap';
 import { BsPlusCircleDotted } from "react-icons/bs";
 import styles from './addList.module.scss';
-import { CollectionWordsContext } from '../../../CollectionWordsContext';
+import { observer } from 'mobx-react-lite';
 
-function AddList() {
-  const {setList, list} = useContext(CollectionWordsContext);
+const AddList = observer (({ctrl}) => {
 
   const english = useInput('', {isEmpty: true, isNumber: false, isRU: false});
   const transcription = useInput('', {isEmpty: true, isNumber: false, isRU: false});
@@ -26,8 +25,8 @@ function AddList() {
         body: JSON.stringify(newWord)
       });
       if (res.ok) {
-        list.push(newWord);
-        setList([...list]);
+        ctrl.list.push(newWord);
+        ctrl.list = [...ctrl.list];
       }
     } catch(e) {
       alert(`Ошибка соединения с сервером. ${e}`);
@@ -36,8 +35,8 @@ function AddList() {
       transcription.setValue('');    
       russian.setValue('');
       tags.setValue(''); 
-    } 
-  }
+    }
+  }  
 
   return (
     <>
@@ -90,5 +89,6 @@ function AddList() {
     </>
   )
 } 
+);
 
 export default AddList;

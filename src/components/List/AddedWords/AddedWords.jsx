@@ -1,11 +1,10 @@
-import React, {useState, useContext} from 'react';
+import React, {useState} from 'react';
 import styles from './addedWords.module.scss';
 import { Button } from 'react-bootstrap';
 import { BsFillTrashFill, BsFillCloudCheckFill, BsPencilSquare, BsXCircle } from "react-icons/bs";
-import { CollectionWordsContext } from '../../../CollectionWordsContext';
+import { observer } from 'mobx-react-lite';
 
-const AddedWords = () => {
-  const {list, setList} = useContext(CollectionWordsContext);
+const AddedWords = observer(({ctrl}) => {
 
   const [data, setData]=useState({
     english: '',
@@ -26,23 +25,6 @@ const AddedWords = () => {
     });
   }
 
-  const deleteWord = async (id) => {
-    let isDelete = window.confirm("Вы действительно хотите удалить это слово?");
-    if (isDelete) {
-    try {
-      const res = await fetch(`http://itgirlschool.justmakeit.ru/api/words/${id}/delete`, {
-        method: 'POST',
-      });
-      if(res.ok) {
-        let newList = [...list].filter(item => item.id!==id);
-        setList(newList)
-      };
-    } catch(e) {
-      alert(`Ошибка соединения с сервером. ${e}`);
-    };
-  }
-  }
-
   const saveWord = async (id) => {
     const newWord = {
       english: data.english,
@@ -56,7 +38,7 @@ const AddedWords = () => {
         body: JSON.stringify(newWord)
       });
       if(res.ok) {
-        let newList = [...list].map (item => {
+        let newList = [...ctrl.list].map (item => {
           if (item.id === id) {
             item.english = data.english;
             item.transcription = data.transcription;
@@ -65,7 +47,7 @@ const AddedWords = () => {
           }
           return item;
         });
-        setList(newList);
+        ctrl.list = newList;
         setEdit(null);
       }
     } catch(e) {
@@ -84,14 +66,14 @@ const AddedWords = () => {
   }
   
   const cancel = () => {
-    setList(list);
+    ctrl.list = ctrl.list;
     setEdit(null)
   }
 
   return (
     <ol className={styles.ol}>
     {    
-      list.map (item => (
+      ctrl.list.map (item => (
         <li key={item.id} className={styles.li} english={item.english}>
           {
             edit === item.id ? 
@@ -109,7 +91,7 @@ const AddedWords = () => {
               <div className={styles.word}>{item.transcription}</div>
               <div className={styles.word}>{item.russian}</div>
               <div className={styles.word}>{item.tags}</div>
-              <Button variant="danger" onClick={() => deleteWord(item.id)}><BsFillTrashFill/></Button>
+              <Button variant="danger" onClick={() => ctrl.deleteWord(item.id)}><BsFillTrashFill/></Button>
               <Button variant="primary" onClick={() => editWord(item.id, item.english, item.transcription, item.russian, item.tags)}><BsPencilSquare/></Button>
             </>
           }
@@ -117,8 +99,8 @@ const AddedWords = () => {
         ))
       }  
     </ol>
-  )
-  
+  ) 
 }
+);
 
 export default AddedWords;

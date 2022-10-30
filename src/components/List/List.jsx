@@ -1,23 +1,29 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import AddedWords from './AddedWords/AddedWords';
 import AddList from './AddedWords/AddList';
+import Error from '../Error/Error'
 import styles from './list.module.scss';
 import style from '../../commonStyles/loading.module.scss';
-import { CollectionWordsContext } from '../../CollectionWordsContext';
+import { MainStorage } from '../storages/MainStorage';
+import { observer } from 'mobx-react-lite';
 
+const List = observer((props) => {
 
+  const [Ctrl] = useState(new MainStorage())
 
-const List = () => {
-  const {isLoading, list} = useContext(CollectionWordsContext);
+  useEffect(() => {
+    Ctrl.getWords();
+  }, []);
 
   useEffect(() => {
     <AddedWords />
-    }, [list]);
+    }, [Ctrl.list]);
 
-  
   return (
     <>
-        {isLoading ? 
+        {Ctrl.error ?
+          <Error /> :
+          Ctrl.isLoading ? 
           <div className={style.loading}>
             {
             [...Array(4)].map((_, index) => 
@@ -26,13 +32,14 @@ const List = () => {
             } 
           </div> :
             <section className={styles.list}>
-              <AddList />
-              <AddedWords />
+              <AddList ctrl = {Ctrl}/>
+              <AddedWords ctrl = {Ctrl}/>
             </section>
         }
     </>
   )
-};
+}
+);
 
 export default List;
 

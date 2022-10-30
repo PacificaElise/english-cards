@@ -9,12 +9,10 @@ import Homepage from './components/Homepage/Homepage';
 
 import Layout from './components/Layout/Layout';
 import NotFound from './components/NotFound/NotFound';
-import { CollectionWordsProvider } from './CollectionWordsContext';
 
 function App() {
 
   return (
-    <CollectionWordsProvider>
       <Routes>
         <Route path='/' element={<Layout/>}>
           <Route path='english-cards' element={<Homepage/>}/>
@@ -26,7 +24,6 @@ function App() {
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
-    </CollectionWordsProvider>
 
   )
 }

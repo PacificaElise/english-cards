@@ -1,16 +1,21 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Card from './Card/Card';
 import styles from './cardsSlider.module.scss';
 import style from '../../commonStyles/loading.module.scss';
 import BtnSlider from './BtnSlider';
-import { CollectionWordsContext} from '../../CollectionWordsContext';
+import { MainStorage } from '../storages/MainStorage';
+import { observer } from 'mobx-react-lite';
 
-const CardsSlider = () => {
+const CardsSlider = observer(() => {
+  const [Ctrl] = useState(new MainStorage())
   const [slideIndex, setSlideIndex] = useState(1);
   const [openCards, setOpenCards] = useState([]);
   const [moves, setMoves] = useState(0);
   const buttonRef = useRef();
-  const {isLoading, list} = useContext(CollectionWordsContext);
+
+  useEffect(() => {
+    Ctrl.getWords();
+  }, []);
 
   const flipCard = (id) => () => {
     setOpenCards(openCards => [...openCards, id]);
@@ -24,10 +29,10 @@ const CardsSlider = () => {
   }
 
   const nextSlide = () => {
-    if(slideIndex !== list.length) {
+    if(slideIndex !== Ctrl.list.length) {
         setSlideIndex(slideIndex+1)
     }
-    else if (slideIndex === list.length) {
+    else if (slideIndex === Ctrl.list.length) {
         setSlideIndex(1)
     }
   };
@@ -37,11 +42,11 @@ const CardsSlider = () => {
         setSlideIndex(slideIndex-1)
     }
     else if (slideIndex === 1) {
-        setSlideIndex(list.length)
+        setSlideIndex(Ctrl.list.length)
     }
   };
   
-  const objectCard = list.map((obj) => {
+  const objectCard = Ctrl.list.map((obj) => {
     Card.defaultProps = {
       english: 'english', 
       russian: 'russian', 
@@ -71,7 +76,7 @@ const CardsSlider = () => {
 
   return (
     <div className={styles.slider}>
-      {isLoading ? 
+      {Ctrl.isLoading ? 
         <div className={style.loading}>
           {
           [...Array(4)].map((_, index) => 
@@ -89,13 +94,14 @@ const CardsSlider = () => {
           <BtnSlider moveSlide={nextSlide} direction={"next"}/>
         </div>
         <div className={styles.counter}>
-          <span>{slideIndex}</span><span>/</span><span>{list.length}</span> 
+          <span>{slideIndex}</span><span>/</span><span>{Ctrl.list.length}</span> 
         </div>
         <button className={styles.btnRestart} onClick={handleRestart}><strong>Начать заново</strong></button>
         </>
       }
     </div>
   );
-};
+}
+);
 
 export default CardsSlider;
