@@ -9,7 +9,7 @@ class MainStorage {
     makeAutoObservable(this)
   }
 
-  getWords() {
+  async getWords() {
     this.isLoading = true;
     fetch('http://itgirlschool.justmakeit.ru/api/words')
         .then(res => res.json())
