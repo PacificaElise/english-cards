@@ -3,6 +3,7 @@ import styles from './addedWords.module.scss';
 import { Button } from 'react-bootstrap';
 import { BsFillTrashFill, BsFillCloudCheckFill, BsPencilSquare, BsXCircle } from "react-icons/bs";
 import { observer } from 'mobx-react-lite';
+import { runInAction } from 'mobx';
 
 const AddedWords = observer(({ctrl}) => {
 
@@ -36,20 +37,17 @@ const AddedWords = observer(({ctrl}) => {
       const res = await fetch(`http://itgirlschool.justmakeit.ru/api/words/${id}/update`, {
         method: 'POST',
         body: JSON.stringify(newWord)
+      }).then(res => res.json());
+
+      ctrl.list.find ((word, index) => {
+        if (word.id === res.id) {
+          runInAction(() => {
+            ctrl.list[index] =res;
+          });
+          
+          setEdit(null);
+        }
       });
-      if(res.ok) {
-        let newList = [...ctrl.list].map (item => {
-          if (item.id === id) {
-            item.english = data.english;
-            item.transcription = data.transcription;
-            item.russian = data.russian;
-            item.tags = data.tags;
-          }
-          return item;
-        });
-        ctrl.list = newList;
-        setEdit(null);
-      }
     } catch(e) {
       alert(`Ошибка соединения с сервером. ${e}`);
     };

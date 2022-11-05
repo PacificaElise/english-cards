@@ -7,7 +7,7 @@ import style from '../../commonStyles/loading.module.scss';
 import { MainStorage } from '../storages/MainStorage';
 import { observer } from 'mobx-react-lite';
 
-const List = observer((props) => {
+const List = observer(() => {
 
   const [Ctrl] = useState(new MainStorage())
 

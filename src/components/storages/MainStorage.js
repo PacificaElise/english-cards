@@ -15,7 +15,9 @@ class MainStorage {
       fetch('http://itgirlschool.justmakeit.ru/api/words')
         .then(res => res.json())
         .then((json) => {
-          this.list = json;
+          runInAction (() => {
+            this.list = json
+          })
         })
         .catch(() => {
           this.error = true;

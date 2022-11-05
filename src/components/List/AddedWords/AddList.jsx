@@ -4,6 +4,7 @@ import { Button,InputGroup, Form } from 'react-bootstrap';
 import { BsPlusCircleDotted } from "react-icons/bs";
 import styles from './addList.module.scss';
 import { observer } from 'mobx-react-lite';
+import { runInAction } from 'mobx';
 
 const AddList = observer (({ctrl}) => {
 
@@ -23,11 +24,10 @@ const AddList = observer (({ctrl}) => {
       const res = await fetch(`http://itgirlschool.justmakeit.ru/api/words/add`, {
         method: 'POST',
         body: JSON.stringify(newWord)
-      });
-      if (res.ok) {
-        ctrl.list.push(newWord);
-        ctrl.list = [...ctrl.list];
-      }
+      }).then (res => res.json());
+      runInAction (() => {
+        ctrl.list.push(res);
+      })
     } catch(e) {
       alert(`Ошибка соединения с сервером. ${e}`);
     } finally {
