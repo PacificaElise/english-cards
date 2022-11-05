@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/english-cards/static/css/main.6e2d44aa.css",
-    "main.js": "/english-cards/static/js/main.0f91d62b.js",
+    "main.css": "/english-cards/static/css/main.cf6c9b7f.css",
+    "main.js": "/english-cards/static/js/main.d7d7c948.js",
     "static/media/learnEnglish.png": "/english-cards/static/media/learnEnglish.186a387d65201894eea3.png",
-    "static/media/error.png": "/english-cards/static/media/error.7e57f1ec30b206e11b07.png",
     "static/media/arrow-left.png": "/english-cards/static/media/arrow-left.cfc5255e436c90073c91.png",
     "index.html": "/english-cards/index.html",
-    "main.6e2d44aa.css.map": "/english-cards/static/css/main.6e2d44aa.css.map",
-    "main.0f91d62b.js.map": "/english-cards/static/js/main.0f91d62b.js.map"
+    "main.cf6c9b7f.css.map": "/english-cards/static/css/main.cf6c9b7f.css.map",
+    "main.d7d7c948.js.map": "/english-cards/static/js/main.d7d7c948.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e2d44aa.css",
-    "static/js/main.0f91d62b.js"
+    "static/css/main.cf6c9b7f.css",
+    "static/js/main.d7d7c948.js"
   ]
 }
