@@ -44,6 +44,7 @@ const AddList = observer(({ ctrl }) => {
     }
   };
 
+
   return (
     <>
       <div className={styles.error}>
@@ -58,7 +59,7 @@ const AddList = observer(({ ctrl }) => {
             Поля с иностранным словом и транскрипцией не должны содержать
             русские буквы!
           </p>
-        )}
+        )}       
       </div>
       <Form className={styles.form}>
         <InputGroup className={styles.inputs}>

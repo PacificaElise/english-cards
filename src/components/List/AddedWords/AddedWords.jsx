@@ -7,6 +7,7 @@ import { runInAction } from 'mobx';
 
 const AddedWords = observer(({ctrl}) => {
 
+
   const [data, setData]=useState({
     english: '',
     transcription: '',
@@ -19,7 +20,6 @@ const AddedWords = observer(({ctrl}) => {
 
   const onChange = (e) => {
     setEmpty(!e.target.value);
-
     setData({
       ...data,
       [e.target.name]: e.target.value
@@ -80,6 +80,7 @@ const AddedWords = observer(({ctrl}) => {
                 <input value={data.transcription} onChange={onChange} name='transcription'/>
                 <input value={data.russian} onChange={onChange} name='russian'/>
                 <input value={data.tags} onChange={onChange} name='tags'/>
+
               <Button variant="success" onClick={() => saveWord(item.id)} disabled={isEmpty}><BsFillCloudCheckFill/></Button>
               <Button variant="info" onClick={() => cancel()}><BsXCircle/></Button>
             </>
