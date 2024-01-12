@@ -34,7 +34,7 @@ const AddedWords = observer(({ctrl}) => {
       tags: data.tags
     }
     try {
-      const res = await fetch(`http://itgirlschool.justmakeit.ru/api/words/${id}/update`, {
+      const res = await fetch(`https://itgirlschool.justmakeit.ru/api/words/${id}/update`, {
         method: 'POST',
         body: JSON.stringify(newWord)
       }).then(res => res.json());
