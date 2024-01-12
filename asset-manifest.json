@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/english-cards/static/css/main.0b2f6782.css",
+    "main.js": "/english-cards/static/js/main.305e04cc.js",
+    "static/media/learnEnglish.png": "/english-cards/static/media/learnEnglish.186a387d65201894eea3.png",
+    "static/media/error.png": "/english-cards/static/media/error.7e57f1ec30b206e11b07.png",
+    "static/media/arrow-left.png": "/english-cards/static/media/arrow-left.cfc5255e436c90073c91.png",
+    "index.html": "/english-cards/index.html",
+    "main.0b2f6782.css.map": "/english-cards/static/css/main.0b2f6782.css.map",
+    "main.305e04cc.js.map": "/english-cards/static/js/main.305e04cc.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0b2f6782.css",
+    "static/js/main.305e04cc.js"
+  ]
+}
